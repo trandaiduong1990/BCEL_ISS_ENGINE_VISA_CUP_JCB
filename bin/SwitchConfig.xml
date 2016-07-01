@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+
+<atmswitch>
+	
+	<name>My Company</name>
+	<address>PSA Building Alexandra Road,Singapore</address>
+	<version>1.0</version>
+
+	<JDBCDriver>oracle.jdbc.driver.OracleDriver</JDBCDriver>
+	
+	<!-- 
+	<JDBCURL>jdbc:oracle:thin:@localhost:1521:orcl</JDBCURL>
+	<DBUserID>BCELISSPRO_NEW</DBUserID>
+	<DBPassword>BCELISSPRO_NEW</DBPassword>
+	 -->
+	
+	<JDBCURL>jdbc:oracle:thin:@192.168.6.86:8083:xe</JDBCURL>
+	<DBUserID>cacisisstest</DBUserID>
+	<DBPassword>cacisisstest</DBPassword>
+	
+	<DBInitSize>2</DBInitSize>
+	<DBMaxActive>40</DBMaxActive>	
+	<DBMaxWait> 200 </DBMaxWait>
+	
+	<CUPSMSJDBCURL>jdbc:oracle:thin:@localhost:1521:orcl</CUPSMSJDBCURL>
+	<CUPSMSDBUserID>bcelposacqlivedmp</CUPSMSDBUserID>
+	<CUPSMSDBPassword>bcelposacqlivedmp</CUPSMSDBPassword>
+	
+	<CUPSMSDBInitSize>2</CUPSMSDBInitSize>
+	<CUPSMSDBMaxActive>40</CUPSMSDBMaxActive>	
+	<CUPSMSDBMaxWait> 200 </CUPSMSDBMaxWait>
+	
+	<SMTPServer>pop.bizmail.yahoo.com</SMTPServer>
+	<SMTPPort>25</SMTPPort>
+	<SMTPUser>satya@transinfo-sg.com</SMTPUser>
+	<SMTPPassword>yahoo321</SMTPPassword>
+	<SMTPFrom>satya@transinfo-sg.com</SMTPFrom>
+	<SMTPTo> satya@transinfo-sg.com</SMTPTo>
+	<MailSubject> Testing </MailSubject>
+	<MailBody> Testing </MailBody>
+	<MailSign> Satya </MailSign>
+	
+	<AdminPort>8001</AdminPort>
+	<SocketTimeout>50</SocketTimeout>
+	<WorkerThreads>10</WorkerThreads>
+	
+	<Debug>true</Debug>
+	<DebugFile>D:\\TransInfotech\\NISHAN\\02-06-2016\\Logs\\IssusingEngine\\Development\\debug.txt</DebugFile>
+	<DebugMsgDumpFile>D:\\TransInfotech\\NISHAN\\02-06-2016\\Logs\\IssusingEngine\\Development\\debugdumptest.txt</DebugMsgDumpFile>
+	
+	<ISOConfig>D:\\WorkspaceEclipse\\BCEL_ISS_ENGINE_VISA_CUP_JCB\\bin\\parser\\base1.xml</ISOConfig>
+	<ISOIssuerConfig>D:\\WorkspaceEclipse\\BCEL_ISS_ENGINE_VISA_CUP_JCB\\bin\\parser\\base1_cb.xml</ISOIssuerConfig>
+	
+	<MultiSocket>false</MultiSocket>
+	<IssuerIP>192.168.1.50</IssuerIP>
+	<IssuerPort>4000</IssuerPort>
+	
+	<HSMIP>192.168.6.95</HSMIP>
+	<HSMPort>1000</HSMPort>
+	
+	<CUPKeyIndex>6</CUPKeyIndex> <!-- CUP Key Exchange index -->
+	
+	<CUPDPKIndex>94</CUPDPKIndex> <!-- CUP EMV key index -->
+	<JCBDPKIndex>95</JCBDPKIndex> <!-- JCB EMV key index -->
+	
+</atmswitch>

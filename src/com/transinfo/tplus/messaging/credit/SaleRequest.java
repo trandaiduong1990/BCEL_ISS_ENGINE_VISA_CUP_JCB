@@ -81,8 +81,8 @@ public class SaleRequest extends RequestBaseHandler {
 
 				validator.addValidator(new DataValidator());
 				validator.addValidator(new TrackValidator());
-				validator.addValidator(new CVVOnTrack2Validator());
-				validator.addValidator(new CVVOnTrack1Validator());
+//				validator.addValidator(new CVVOnTrack2Validator());
+//				validator.addValidator(new CVVOnTrack1Validator());
 //				validator.addValidator(new EMVValidator(false));
 				
 //				validator.addValidator(new PINValidator(false));
@@ -95,7 +95,7 @@ public class SaleRequest extends RequestBaseHandler {
 				validator.addValidator(new BlackListCardValidator());
 				validator.addValidator(new BlackListMerchantValidator());
 
-				validator.addValidator(new CVV2Validator(false));
+//				validator.addValidator(new CVV2Validator(false));
 
 				validator.process(objISO);
 

@@ -1,5 +1,6 @@
 package com.transinfo.tplus.javabean;
 
+import com.transinfo.tplus.util.CardEncryption;
 import com.transinfo.tplus.util.DBManager;
 import com.transinfo.tplus.util.TPlusResultSet;
 
@@ -37,13 +38,17 @@ public class CardCashPurseDataBean {
 
     public void execute()throws Exception {
         try{
+        	// card encryption
+        	String encyCardNo =  CardEncryption.encrypt(this.getCardNo());
+
             StringBuffer query = new StringBuffer();
             query.append("select ca.cardnumber, cu.total_previous_bal, cu.account_id, ");
             query.append("cu.previous_cash_balance, (cu.credit_limit-cu.limit_used) as balance ");
             query.append("from cards ca, customer_account cu ");
             query.append("where ca.account_id = cu.account_id ");
            // query.append("and ca.customer_id = cu.customer_id ");
-            query.append("and ca.cardnumber='"+this.getCardNo()+"' ");
+//            query.append("and ca.cardnumber='"+this.getCardNo()+"' ");
+            query.append("and ca.encrypted_card_no='" + encyCardNo + "' ");
             System.out.println(query.toString());//HIEP
             objDBManager.executeSQL(query.toString());
             TPlusResultSet rs = objDBManager.getResultSet();

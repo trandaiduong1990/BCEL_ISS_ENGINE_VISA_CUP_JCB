@@ -76,10 +76,10 @@ public class BalanceRequest extends RequestBaseHandler {
 				validator.addValidator(new SignOnValidator());
 
 				validator.addValidator(new DataValidator());
-				validator.addValidator(new TrackValidator());
-				validator.addValidator(new CVVOnTrack2Validator());
-				validator.addValidator(new CVVOnTrack1Validator());
-				validator.addValidator(new CVV2Validator(false));
+//				validator.addValidator(new TrackValidator());
+//				validator.addValidator(new CVVOnTrack2Validator());
+//				validator.addValidator(new CVVOnTrack1Validator());
+//				validator.addValidator(new CVV2Validator(false));
 
 				// add new card status validator
 				validator.addValidator(new CardStatusValidator());

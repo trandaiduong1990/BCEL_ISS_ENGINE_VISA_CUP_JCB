@@ -85,9 +85,9 @@ public class CashRequest extends RequestBaseHandler {
 
 				validator.addValidator(new DataValidator());
 				validator.addValidator(new TrackValidator());
-				validator.addValidator(new CVVOnTrack2Validator());
-				validator.addValidator(new CVVOnTrack1Validator());
-				validator.addValidator(new CVV2Validator(false));
+//				validator.addValidator(new CVVOnTrack2Validator());
+//				validator.addValidator(new CVVOnTrack1Validator());
+//				validator.addValidator(new CVV2Validator(false));
 				validator.addValidator(new EMVValidator(false));
 				
 				// add new card status validator
@@ -100,7 +100,7 @@ public class CashRequest extends RequestBaseHandler {
 					PINValidateStatus = true;
 				}
 
-				validator.addValidator(new PINValidator(PINValidateStatus));
+//				validator.addValidator(new PINValidator(PINValidateStatus));
 
 				validator.addValidator(new BlackListCardValidator());
 				validator.addValidator(new BlackListMerchantValidator());

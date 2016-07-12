@@ -47,8 +47,8 @@ public class CardCashPurseDataBean {
             query.append("from cards ca, customer_account cu ");
             query.append("where ca.account_id = cu.account_id ");
            // query.append("and ca.customer_id = cu.customer_id ");
-//            query.append("and ca.cardnumber='"+this.getCardNo()+"' ");
-            query.append("and ca.encrypted_card_no='" + encyCardNo + "' ");
+            query.append("and ca.cardnumber='"+this.getCardNo()+"' ");
+//            query.append("and ca.encrypted_card_no='" + encyCardNo + "' ");
             System.out.println(query.toString());//HIEP
             objDBManager.executeSQL(query.toString());
             TPlusResultSet rs = objDBManager.getResultSet();

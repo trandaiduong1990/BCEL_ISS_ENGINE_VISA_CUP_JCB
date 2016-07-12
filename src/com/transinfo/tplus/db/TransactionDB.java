@@ -975,7 +975,8 @@ public class TransactionDB
 
 			String strMid = objISO.getValue(42);
 			String strTID = objISO.getValue(41);
-			String strCardno =objISO.getCardNumber();
+//			String strCardno =objISO.getCardNumber();
+			String strCardno =objISO.getTransactionDataBean().getCardNo();
 			String strMTI = objISO.getValue(90).substring(0,4);
 			String strTraceNo = objISO.getValue(90).substring(4,10);
 			String strTransimissionDt = objISO.getValue(90).substring(10,20);
@@ -1020,7 +1021,8 @@ public class TransactionDB
 
 			String strMid = objISO.getValue(42);
 			String strTID = objISO.getValue(41);
-			String strCardno =objISO.getCardNumber();
+//			String strCardno =objISO.getCardNumber();
+			String strCardno =objISO.getTransactionDataBean().getCardNo();
 			String approvalCode = objISO.getValue(38);
 
 			StringBuffer sbfDTDVal = new StringBuffer();
@@ -1100,7 +1102,8 @@ public class TransactionDB
 			sbfDTDVal.append("UPDATE TRANXLOG SET Deleted = 'Y' WHERE TERMINALID='"+objISO.getValue(TERMINALID)+"'");
 			if(objISO.getCardNumber()!=null && !objISO.getCardNumber().equals(""))
 			{
-				sbfDTDVal.append(" AND CARDNUMBER='" + objISO.getCardNumber()+"'");
+//				sbfDTDVal.append(" AND CARDNUMBER='" + objISO.getCardNumber()+"'");
+				sbfDTDVal.append(" AND CARDNUMBER='" + objISO.getTransactionDataBean().getCardNo() +"'");
 			}
 			sbfDTDVal.append(" AND TRACENO='" +objISO.getValue(TRACENO) +"'");
 
@@ -1152,7 +1155,8 @@ public class TransactionDB
 
 			String strMid = objISO.getValue(42);
 			String strTID = objISO.getValue(41);
-			String strCardno =objISO.getCardNumber();
+//			String strCardno =objISO.getCardNumber();
+			String strCardno =objISO.getTransactionDataBean().getCardNo();
 			//double dlbAtm = new Double(objISO.getValue(4)).doubleValue()/100;
 			String strMTI = objISO.getValue(90).substring(0,4);
 
@@ -1270,8 +1274,9 @@ public class TransactionDB
 		{
 
 			String strTID = objISO.getValue(41);
-			String strCardno =objISO.getCardNumber();
-
+//			String strCardno =objISO.getCardNumber();
+			String strCardno =objISO.getTransactionDataBean().getCardNo();
+			
 			StringBuffer sbfDTDVal = new StringBuffer();
 			sbfDTDVal.append("SELECT * FROM TRANXLOG WHERE ");
 			sbfDTDVal.append(" TERMINALID='" + strTID + "'");
@@ -1334,7 +1339,8 @@ public class TransactionDB
 		{
 
 			String strTID = objISO.getValue(41);
-			String strCardno =objISO.getCardNumber();
+//			String strCardno =objISO.getCardNumber();
+			String strCardno =objISO.getTransactionDataBean().getCardNo();
 			String refNo = objISO.getValue(37);
 
 			StringBuffer sbfDTDVal = new StringBuffer();
@@ -1397,7 +1403,8 @@ public class TransactionDB
 		{
 
 			String strTID = objISO.getValue(41);
-			String strCardno =objISO.getCardNumber();
+//			String strCardno =objISO.getCardNumber();
+			String strCardno =objISO.getTransactionDataBean().getCardNo();
 
 			StringBuffer sbfDTDVal = new StringBuffer();
 			sbfDTDVal.append("SELECT COUNT(*) AS NOOFATTEMPTS FROM TRANXLOG WHERE ");
@@ -1450,7 +1457,8 @@ public class TransactionDB
 
 			String strMid = objISO.getValue(42);
 			String strTID = objISO.getValue(41);
-			String strCardno =objISO.getCardNumber();
+//			String strCardno =objISO.getCardNumber();
+			String strCardno =objISO.getTransactionDataBean().getCardNo();
 			String strMTI = objISO.getValue(90).substring(0,4);
 
 			String strTraceNo = objISO.getValue(90).substring(4,10);
@@ -1580,7 +1588,8 @@ public class TransactionDB
 
 			String strMid = objISO.getValue(42);
 			String strTID = objISO.getValue(41);
-			String strCardno =objISO.getCardNumber();
+//			String strCardno =objISO.getCardNumber();
+			String strCardno =objISO.getTransactionDataBean().getCardNo();
 			String strMTI = objISO.getValue(90).substring(0,4);
 
 			String strTraceNo = objISO.getValue(90).substring(4,10);
@@ -1702,7 +1711,8 @@ public class TransactionDB
 
 			String strMid = objISO.getValue(42);
 			String strTID = objISO.getValue(41);
-			String strCardno =objISO.getCardNumber();
+//			String strCardno =objISO.getCardNumber();
+			String strCardno =objISO.getTransactionDataBean().getCardNo();
 			String strMTI = objISO.getValue(90).substring(0,4);
 			String strTraceNo = objISO.getValue(90).substring(4,10);
 			String strTransimissionDt = objISO.getValue(90).substring(10,20);
@@ -1773,7 +1783,8 @@ public class TransactionDB
 
 			String strMid = objISO.getValue(42);
 			String strTID = objISO.getValue(41);
-			String strCardno =objISO.getCardNumber();
+//			String strCardno =objISO.getCardNumber();
+			String strCardno =objISO.getTransactionDataBean().getCardNo();
 			String strMTI = objISO.getValue(90).substring(0,4);
 
 			String strTraceNo = objISO.getValue(90).substring(4,10);
@@ -1894,7 +1905,8 @@ public class TransactionDB
 
 			String strMid = objISO.getValue(42);
 			String strTID = objISO.getValue(41);
-			String strCardno =objISO.getCardNumber();
+//			String strCardno =objISO.getCardNumber();
+			String strCardno =objISO.getTransactionDataBean().getCardNo();
 			String strMTI = objISO.getValue(90).substring(0,4);
 			String strTraceNo = objISO.getValue(90).substring(4,10);
 			String strTransimissionDt = objISO.getValue(90).substring(10,20);
@@ -1941,7 +1953,8 @@ public class TransactionDB
 
 			String strMid = objISO.getValue(42);
 			String strTID = objISO.getValue(41);
-			String strCardno =objISO.getCardNumber();
+//			String strCardno =objISO.getCardNumber();
+			String strCardno =objISO.getTransactionDataBean().getCardNo();
 			String strMTI = objISO.getValue(90).substring(0,4);
 
 			String strTraceNo = objISO.getValue(90).substring(4,10);
@@ -2009,7 +2022,8 @@ public class TransactionDB
 
 			String strMid = objISO.getValue(42);
 			String strTID = objISO.getValue(41);
-			String strCardno =objISO.getCardNumber();
+//			String strCardno =objISO.getCardNumber();
+			String strCardno =objISO.getTransactionDataBean().getCardNo();
 			String strMTI = objISO.getValue(90).substring(0,4);
 
 			String strTraceNo = objISO.getValue(90).substring(4,10);
@@ -2208,7 +2222,8 @@ public class TransactionDB
 			StringBuffer sbfDTDVal = new StringBuffer();
 
 			sbfDTDVal.append("UPDATE TRANXLOG SET Deleted = 'Y' WHERE  TRACENO='" + objISO.getValue(11) +
-					"' AND CARDNUMBER='" + objISO.getCardNumber() + "'");
+//					"' AND CARDNUMBER='" + objISO.getCardNumber() + "'");
+			"' AND CARDNUMBER='" + objISO.getTransactionDataBean().getCardNo() + "'");
 
 			if (DebugWriter.boolDebugEnabled) DebugWriter.write("TransactionDB:"+sbfDTDVal.toString());
 			System.out.println(" mySQL="+ sbfDTDVal.toString());
@@ -2372,8 +2387,9 @@ public class TransactionDB
 			String strTerminalID = objISO.getValue(41);
 			String strApprovalCode = objISO.getValue(38);
 
-			String strCardNumber =objISO.getCardNumber();
-
+//			String strCardNumber =objISO.getCardNumber();
+			String strCardNumber =objISO.getTransactionDataBean().getCardNo();
+			
 			String strMTI = "";
 			String strTraceNo = "";
 			String strAcqId = "";
@@ -4894,7 +4910,8 @@ public class TransactionDB
 			sbfDTDVal.append("UPDATE TRANXLOG SET Deleted = 'Y' WHERE TERMINALID='"+objISO.getValue(TERMINALID) + "'");
 			if(objISO.getCardNumber()!=null && !objISO.getCardNumber().equals(""))
 			{
-				sbfDTDVal.append(" AND CARDNUMBER='" + objISO.getCardNumber()+"'");
+//				sbfDTDVal.append(" AND CARDNUMBER='" + objISO.getCardNumber()+"'");
+				sbfDTDVal.append(" AND CARDNUMBER='" + objISO.getTransactionDataBean().getCardNo() +"'");
 			}
 
 			sbfDTDVal.append(" AND REFNO='" +objISO.getValue(REFNO) + "' AND SETTLED='N'");
@@ -7191,7 +7208,8 @@ public TransactionDataBean checkOffusTransaction(IParser objISO) throws OnlineEx
 
 			String strMid = objISO.getValue(42);
 			String strTID = objISO.getValue(41);
-			String strCardno =objISO.getCardNumber();
+//			String strCardno =objISO.getCardNumber();
+			String strCardno =objISO.getTransactionDataBean().getCardNo();
 			//double dlbAtm = new Double(objISO.getValue(4)).doubleValue()/100;
 			String strMTI = objISO.getValue(90).substring(0,4);
 			String strTraceNo = objISO.getValue(90).substring(4,10);
@@ -7279,7 +7297,8 @@ public TransactionDataBean checkOffusTransaction(IParser objISO) throws OnlineEx
 				query.append(" AND MERCHANTID='"+merchantId+"'");
 			}
 
-			query.append(" AND CARDNUMBER='"+objISO.getCardNumber()+"' AND TRACENO='"+ objISO.getValue(11)+"'");
+//			query.append(" AND CARDNUMBER='"+objISO.getCardNumber()+"' AND TRACENO='"+ objISO.getValue(11)+"'");
+			query.append(" AND CARDNUMBER='"+objISO.getTransactionDataBean().getCardNo()+"' AND TRACENO='"+ objISO.getValue(11)+"'");
 			query.append(" AND REFNO='"+objISO.getValue(37)+"' ");
 
 			System.out.println(query.toString());
@@ -7323,7 +7342,8 @@ public TransactionDataBean checkOffusTransaction(IParser objISO) throws OnlineEx
 				query.append(" MTI='0400' AND");
 			}
 			query.append(" MERCHANTID='"+objISO.getValue(42)+"'");
-			query.append(" AND CARDNUMBER='"+objISO.getCardNumber()+"' AND TRACENO='"+ objISO.getValue(11)+"'");
+//			query.append(" AND CARDNUMBER='"+objISO.getCardNumber()+"' AND TRACENO='"+ objISO.getValue(11)+"'");
+			query.append(" AND CARDNUMBER='"+objISO.getTransactionDataBean().getCardNo()+"' AND TRACENO='"+ objISO.getValue(11)+"'");
 			query.append(" AND REFNO='"+objISO.getValue(37)+"' AND RESPONSECODE='00'");
 			//AND TRANSMISSION_DATETIME='"+objISO.getValue(7)+"'");
 
@@ -7991,5 +8011,33 @@ System.out.println(strQuery.toString());
 
 	}*/
 
+	public String getCardNumber(String encryptedCard)throws Exception
+	{
+		//TransactionDataBean objTransactionDataBean = new TransactionDataBean();
+		String strCardNumber = "";
+		try
+		{
+			StringBuffer query = new StringBuffer();
+			query.append("SELECT CARDNUMBER FROM CARDS WHERE ");
+			query.append(" ENCRYPTED_CARD_NO = '" + encryptedCard + "' ");
+
+			System.out.println(query.toString());
+			DBManager objDBManager = new DBManager();
+			objDBManager.executeSQL(query.toString());
+			TPlusResultSet rs = objDBManager.getResultSet();
+			if(rs.next())
+			{
+				return rs.getString("CARDNUMBER");
+			}
+
+		}catch(Exception vep)
+		{
+			System.out.println("Exception while getting Total Txn for given card : "+vep.toString());
+			throw vep;
+		}
+
+		return strCardNumber;
+
+	}
 
 }

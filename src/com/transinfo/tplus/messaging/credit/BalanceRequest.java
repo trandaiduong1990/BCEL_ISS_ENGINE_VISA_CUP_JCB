@@ -91,8 +91,8 @@ public class BalanceRequest extends RequestBaseHandler {
 					PINValidateStatus = true;
 				}
 
-				validator.addValidator(new EMVValidator(false));
-				//validator.addValidator(new PINValidator(PINValidateStatus));
+//				validator.addValidator(new EMVValidator(false));
+//				validator.addValidator(new PINValidator(PINValidateStatus));
 				validator.addValidator(new BlackListCardValidator());
 
 				validator.process(objISO);

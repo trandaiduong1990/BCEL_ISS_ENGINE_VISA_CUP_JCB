@@ -22,6 +22,7 @@ import org.jpos.iso.ISOMsg;
 import com.transinfo.tplus.TPlusCodes;
 import com.transinfo.tplus.TPlusConfig;
 import com.transinfo.tplus.TPlusException;
+import com.transinfo.tplus.db.TransactionDB;
 import com.transinfo.tplus.debug.DebugWriter;
 import com.transinfo.tplus.messaging.OnlineException;
 import com.transinfo.tplus.messaging.parser.IParser;
@@ -705,11 +706,13 @@ implements java.io.Serializable
 		this.strCardTypeId = strCardTypeId;
 	}
 
-	public void populateData(IParser objISO)throws OnlineException
+	public void populateData(IParser objISO, String cardNumber)throws OnlineException
 	{
 
 		try
 		{
+			TransactionDB objTranxDB = new TransactionDB();
+			
 			this.setIssuerId(TPlusConfig.ISSUER_ID);
 			this.setMTI(objISO.getMTI());
 			this.setProcessingCode(objISO.getValue(3));
@@ -727,7 +730,8 @@ implements java.io.Serializable
 			this.setTerminalId(objISO.getValue(41));
 			this.setMerchantId(objISO.getValue(42));
 			this.setMerchantName(objISO.getValue(43));
-			this.setCardNo(objISO.getCardNumber());
+//			this.setCardNo(objISO.getCardNumber());
+			this.setCardNo(cardNumber);
 			this.setExpDate(objISO.getValue(14));
 
 			this.setRecon("N");

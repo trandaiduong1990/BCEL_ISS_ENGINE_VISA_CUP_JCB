@@ -26,6 +26,7 @@ import com.transinfo.tplus.log.TransactionDataBean;
 import com.transinfo.tplus.messaging.parser.IParser;
 import com.transinfo.tplus.messaging.parser.TPlusISOCode;
 import com.transinfo.tplus.messaging.parser.TPlusISOMsg;
+import com.transinfo.tplus.util.CardEncryption;
 
 @SuppressWarnings({"static-access","unused"})
 public class RequestProcessor extends IRequestProcessor
@@ -116,15 +117,17 @@ public class RequestProcessor extends IRequestProcessor
 
 		try
 		{
-
 			if (DebugWriter.boolDebugEnabled) DebugWriter.write("RequestProcessor:In ProcessRequest...");
 			TPlusPrintOutput.printMessage("RequestProcessor","In ProcessRequest...");
 
+			TransactionDB objTranxDB = new TransactionDB();
+			// card encryption
+			String encryptedCard =  CardEncryption.encrypt(objISO.getCardNumber());
+			String cardNumber = objTranxDB.getCardNumber(encryptedCard);
 			System.out.println("Populating Data1..");
 			com.transinfo.tplus.log.TransactionDataBean objTransactionDataBean = new com.transinfo.tplus.log.TransactionDataBean();
-			objTransactionDataBean.populateData(objISO);
+			objTransactionDataBean.populateData(objISO, cardNumber);
 
-			TransactionDB objTranxDB = new TransactionDB();
 
 			objISO.setTransactionDataBean(objTransactionDataBean);
 			TransactionDataBean objTranxBean = objISO.getTransactionDataBean();

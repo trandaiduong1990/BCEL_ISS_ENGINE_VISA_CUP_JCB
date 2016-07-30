@@ -52,7 +52,8 @@ public class SignOnRequest extends CUPRequestBaseHandler
 			objMsg.set(7,ISODate.getDateTime(d,TimeZone.getTimeZone("GMT+8")));
 			objMsg.set(11,traceNo);
 			
-			objMsg.set (33, "27380418");
+			objMsg.set (33, "33180116");
+//			objMsg.set (33, "27380418");
 			//objMsg.set (33, "30470418");
 			
 			objMsg.set(70,"001");

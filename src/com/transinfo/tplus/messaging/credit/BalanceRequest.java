@@ -76,7 +76,7 @@ public class BalanceRequest extends RequestBaseHandler {
 				validator.addValidator(new SignOnValidator());
 
 				validator.addValidator(new DataValidator());
-//				validator.addValidator(new TrackValidator());
+				validator.addValidator(new TrackValidator());
 //				validator.addValidator(new CVVOnTrack2Validator());
 //				validator.addValidator(new CVVOnTrack1Validator());
 //				validator.addValidator(new CVV2Validator(false));
@@ -91,7 +91,7 @@ public class BalanceRequest extends RequestBaseHandler {
 					PINValidateStatus = true;
 				}
 
-//				validator.addValidator(new EMVValidator(false));
+				validator.addValidator(new EMVValidator(false));
 //				validator.addValidator(new PINValidator(PINValidateStatus));
 				validator.addValidator(new BlackListCardValidator());
 

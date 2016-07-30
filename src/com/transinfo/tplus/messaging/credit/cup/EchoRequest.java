@@ -50,7 +50,8 @@ public class EchoRequest extends CUPRequestBaseHandler
 			objMsg.set(11,traceNo);
 
 			//objMsg.set (33, "27380418");
-			objMsg.set (33, "30470418");
+//			objMsg.set (33, "30470418");
+			objMsg.set (33, "33180116");
 			
 			objMsg.set(70,"301");
 
